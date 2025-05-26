@@ -1,0 +1,338 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configuración de la fuente para el cuerpo */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto;
+}
+
+/* ----- HEADER PRINCIPAL ----- */
+.header {
+    background-color: #1b8135;
+    /* Fondo blanco */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil debajo del header */
+    padding: 1rem 2rem;
+    /* Espaciado interno */
+    position: sticky;
+    /* Fija el header en la parte superior al hacer scroll */
+    top: 0;
+    z-index: 1000;
+    /* Se asegura de que el header esté siempre por encima del contenido */
+}
+
+/* ----- CONTENEDOR DEL HEADER ----- */
+.header-container {
+    max-width: 1200px;
+    /* Limita el ancho del header en pantallas grandes */
+    margin: 0 auto;
+    /* Centra el header en la pantalla */
+    display: flex;
+    /* Usa Flexbox */
+    justify-content: space-between;
+    /* Distribuye los elementos */
+    align-items: center;
+    /* Alinea los elementos verticalmente */
+    gap: 2rem;
+    /* Espaciado entre elementos */
+    border: 2px solid black;
+}
+
+
+img:not([alt="logotipo"]) {
+    border-radius: 15px;
+}
+
+
+
+
+
+.fondo-solo {
+    background-color: #398543;
+    background-image: url('../img/img_Presentacion.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 20px;
+    position: relative;
+    height: 100vh;
+    border-radius: 15px;
+}
+
+.imagen-arriba-derecha {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    width: 200px;
+    height: auto;
+    object-fit: contain;
+    max-width: 100%;
+    z-index: 10;
+
+}
+
+/* ----- LOGO ----- */
+.logo {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+/* ----- NAVEGACIÓN ----- */
+.nav {
+    display: flex;
+    gap: 1.5rem;
+    /* Espaciado entre enlaces */
+    align-items: center;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    /* Transición suave */
+}
+
+.nav-link:hover {
+    color: #007bff;
+    transform: translateY(-5px);
+    /* Cambia a azul al pasar el mouse */
+}
+
+/* ----- BOTONES DE ACCIONES ----- */
+.actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+/* Estilos generales de botones */
+.btn {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    /* Bordes redondeados */
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+/* Botón secundario (borde azul, fondo transparente) */
+.btn-secondary {
+    color: white;
+    border: 1px solid #007bff;
+    background-color: transparent;
+}
+
+.btn-secondary:hover {
+    background-color: #0056b3;
+    /* Azul muy claro */
+}
+
+/* Botón primario (fondo azul, texto blanco) */
+.btn-primary {
+    color: white;
+    background-color: #007bff;
+    border: 1px solid #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    /* Azul más oscuro */
+}
+
+/* ----- BOTÓN DE MENÚ (MÓVILES) ----- */
+.menu-button {
+    display: none;
+    /* Oculto en pantallas grandes */
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001;
+    /* Asegura que esté por encima del overlay */
+}
+
+/* ----- OVERLAY (FONDO OSCURO CUANDO SE ABRE EL MENÚ) ----- */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Fondo negro semitransparente */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Cuando el header está activo, mostramos el overlay */
+.header.active .overlay {
+    display: block;
+    opacity: 1;
+}
+
+/* ----- MEDIA QUERY PARA MÓVILES ----- */
+@media (max-width: 768px) {
+    .menu-button {
+        display: block;
+        /* Muestra el botón de menú */
+    }
+
+    /* Escondemos la navegación y los botones de acciones en móviles */
+    .nav,
+    .actions {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        transform: translateY(-20px);
+        transition: all 0.3s ease;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 1rem;
+        flex-direction: column;
+        width: 100%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Cuando el menú está activo, lo mostramos */
+    .header.active .nav,
+    .header.active .actions {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+        z-index: 1000;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 0.5rem 0;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+        margin: 0.5rem 0;
+    }
+}
+
+
+h1 {
+    text-align: center;
+    color: blue
+}
+
+h2 {
+    text-align: left;
+    color: blue
+}
+
+.cambia-color {
+    text-align: left;
+    color: blue
+}
+
+.cambia-color:hover {
+    color: red;
+}
+
+
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px 60px;
+}
+
+.content-item {
+
+    background-color: #2f2f2f;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba (0, 0, 0, 0.1) text-align center;
+    transition: transform 0.3s ease;
+
+}
+
+.content-item:hover {
+    transform: scale(1.05);
+}
+
+.content-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+
+}
+
+.content-item h4 {
+    margin: 15px 0;
+    color: #a1979748;
+    text-align: center;
+}
+
+.content-item h5 {
+    margin: 15px 0;
+    color: #a1979748;
+    text-align: center;
+}
+
+h3 {
+    text-align: left;
+    color: blue
+}
+
+table,
+td {
+    border: black 1px solid;
+    border-collapse: collapse;
+}
+
+footer.pie {
+    background-color: #222;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    /* separa las columnas */
+    padding: 20px 40px;
+    flex-wrap: nowrap;
+    /* NO permite que se vayan abajo */
+    gap: 20px;
+}
+
+footer.pie .columna {
+    flex: 1;
+    /* todas del mismo ancho */
+    padding: 0 10px;
+}
+
+footer.pie h3 {
+    border-bottom: 1px solid #444;
+    padding-bottom: 5px;
+}
+
+footer.pie ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer.pie ul li {
+    margin: 8px 0;
+}
+
+footer.pie a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+footer.pie a:hover {
+    color: #fff;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Reserva en el Restaurante</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+    <div id="insertar-overlay"></div>
+    <div id="insertar-header"></div>
+
+
+    <br>
+    <div class="fondo-solo">
+
+        <img src="img/Img_restaurante.jpg" alt="imagen decorativa" class="imagen-arriba-derecha">
+
+        <h1>Pa-Ellas y Ellos</h1>
+        <p>El deleite de sabores y colores, el momento lo pones Tú</p>
+        <br>
+        <h2>Formulario de Reserva</h2>
+        <form action="procesar_reserva.php" method="post">
+            <label for="res_fecha">Fecha:</label>
+            <input type="date" id="res_fecha" name="res_fecha" required><br><br>
+
+            <label for="res_hora">Hora:</label>
+            <input type="time" id="res_hora" name="res_hora" required><br><br>
+
+            <label for="res_com">Número de comensales:</label>
+            <input type="number" id="res_com" name="res_com" min="1" required><br><br>
+
+            <label>Ubicación:</label><br>
+            <input type="radio" id="comedor" name="res_ubi" value="comedor" required>
+            <label for="comedor">Comedor</label><br>
+            <input type="radio" id="terraza" name="res_ubi" value="terraza">
+            <label for="terraza">Terraza</label><br><br>
+
+            <label for="res_nom">Nombre:</label>
+            <input type="text" id="res_nom" name="res_nom" required><br><br>
+
+            <label for="res_tel">Teléfono:</label>
+            <input type="tel" id="res_tel" name="res_tel" required><br><br>
+
+            <label for="res_ema">Email:</label>
+            <input type="email" id="res_ema" name="res_ema" required
+                pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                title="Introduce un correo válido como nombre@dominio.com"><br><br>
+
+
+
+            <label for="res_comentarios">Comentarios:</label><br>
+            <textarea id="res_comentarios" name="res_comentarios" rows="4" cols="50" maxlength="250"
+                placeholder="Indica alergias, peticiones especiales, etc. (máx. 250 caracteres)"></textarea><br><br>
+
+            <input type="submit" value="Reservar">
+        </form>
+        <div id="insertar-footer"></div>
+    </div>
+
+
+    <script src="js/componentes.js"></script>
+    <script>
+        document.getElementById("insertar-overlay").innerHTML = componentes.overlay;
+        document.getElementById("insertar-header").innerHTML = componentes.header;
+        document.getElementById("insertar-footer").innerHTML = componentes.footer;
+
+        // Lógica para activar/desactivar el menú en móviles
+        document.querySelector(".menu-button").addEventListener("click", function () {
+            document.querySelector(".header").classList.toggle("active");
+        });
+    </script>
+</body>
+
+</html>

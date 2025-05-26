@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+    <div id="insertar-overlay"></div>
+    <div id="insertar-header"></div>
+    
+    
+        <br>
+        <div class="fondo-solo">
+
+            <img src="img/Img_restaurante.jpg" alt="imagen decorativa" class="imagen-arriba-derecha">
+
+            <br>
+            <h1>Pa-Ellas y Ellos</h1>
+            <p>El deleite de sabores y colores, el momento lo pones Tú</p>
+            <br>
+
+            <h2>contacto</h2>
+
+            <form action="recibir.html" method="get">
+                <p>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="escribir tu nombre" required>
+                </p>
+                <p>
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" required>
+                </p>
+                <p>
+                    <label for="Teléfono">Teléfono:</label>
+                    <input type="number" name="email" id="number" required>
+                </p>
+                <p>
+                    <label for="categoria">Categoria del Plato</label>
+                    <select name="categoria" id="categoria">
+                        <option value="entrantes">Entrantes</option>
+                        <option value="plato principal">Plato Principal</option>
+                        <option value="plato secundario">Plato Secundario</option>
+                        <option value="postres">Postres</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="plato">Tu Plato:</label><br>
+                    <textarea name="plato" id="plato" rows="4" cols="50" required></textarea>
+                </p>
+                <p>
+                    <label for="comentario">Comentario:</label><br>
+                    <textarea name="comentario" id="comentario" rows="4" cols="50"
+                        placeholder="Déjanos tu comentario..."></textarea>
+                </p>
+                <p>
+                    <input type="checkbox" name="suscripcion" id="noticias" value="noticias">
+                    <label for="noticias">Noticias</label>
+
+                    <input type="checkbox" name="suscripcion" id="ofertas" value="ofertas">
+                    <label for="ofertas">Ofertas</label>
+                </p>
+                <p>
+                    <input type="submit" value="Enviar Plato">
+                    <input type="reset" value="Limpiar" id="">
+                </p>
+
+            </form>
+            <p><em>
+                    Pa Ellas y Ellos se reserva el derecho
+                </em></p>
+        <div id="insertar-footer"></div>
+    </div>
+
+
+    <script src="js/componentes.js"></script>
+    <script>
+        document.getElementById("insertar-overlay").innerHTML = componentes.overlay;
+        document.getElementById("insertar-header").innerHTML = componentes.header;
+        document.getElementById("insertar-footer").innerHTML = componentes.footer;
+
+        // Lógica para activar/desactivar el menú en móviles
+        document.querySelector(".menu-button").addEventListener("click", function () {
+            document.querySelector(".header").classList.toggle("active");
+        });
+    </script>
+    
+</body>
+
+</html>

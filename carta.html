@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Carta del Restaurante</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+    <div id="insertar-overlay"></div>
+    <div id="insertar-header"></div>
+
+
+    <div class="fondo-solo">
+
+        <img src="img/Img_restaurante.jpg" alt="imagen decorativa" class="imagen-arriba-derecha">
+
+        <h1>Pa-Ellas y Ellos</h1>
+        <p>El deleite de sabores y colores, el momento lo pones Tú</p>
+        <br>
+        <h2>Carta del Restaurante</h2>
+
+        <form id="filtro-alergenos">
+            <fieldset>
+                <legend>Filtra por alérgenos:</legend>
+                <label><input type="checkbox" value="G"> Gluten (G)</label>
+                <label><input type="checkbox" value="L"> Lactosa (L)</label>
+                <label><input type="checkbox" value="H"> Huevo (H)</label>
+                <label><input type="checkbox" value="F"> Frutos secos (F)</label>
+                <label><input type="checkbox" value="S"> Soja (S)</label>
+            </fieldset>
+        </form>
+
+        <div id="aviso-alergenos" style="display: none;"></div>
+
+        <table id="carta">
+            <tbody>
+                <tr>
+                    <td colspan="4" class="categoria">Ensaladas</td>
+                </tr>
+                <tr>
+                    <td class="alergenos">G, H, L</td>
+                    <td>Ensalada César</td>
+                    <td>Lechuga, tostes, huevo, manzana, aceitunas, salsa césar y parmesano</td>
+                    <td class="precio">8.00 €</td>
+                </tr>
+                <tr>
+                    <td class="alergenos">F</td>
+                    <td>Ensalada de nueces</td>
+                    <td>Brotes verdes, queso azul, nueces y vinagreta balsámica</td>
+                    <td class="precio">10.00 €</td>
+                </tr>
+                <tr>
+                    <td class="alergenos">-</td>
+                    <td>Ensalada Mediterránea</td>
+                    <td>Tomate, pepino, aceitunas y orégano</td>
+                    <td class="precio">8.50 €</td>
+                </tr>
+
+                <tr>
+                    <td colspan="4" class="categoria">Pokes y Bowls</td>
+                </tr>
+                <tr>
+                    <td class="alergenos">S, G</td>
+                    <td>Poke de atún</td>
+                    <td>Arroz, atún marinado, aguacate, soja y sésamo</td>
+                    <td class="precio">11.90 €</td>
+                </tr>
+                <tr>
+                    <td class="alergenos">S</td>
+                    <td>Bowl veggie</td>
+                    <td>Quinoa, edamame, zanahoria, hummus y tofu</td>
+                    <td class="precio">10.50 €</td>
+                </tr>
+                <tr>
+                    <td class="alergenos">G, H</td>
+                    <td>Poke de pollo crujiente</td>
+                    <td>Arroz, pollo, maíz, aguacate y mayonesa japonesa</td>
+                    <td class="precio">11.20 €</td>
+                </tr>
+
+                <tr>
+                    <td colspan="4" class="categoria">Platos Veganos</td>
+                </tr>
+                <tr>
+                    <td class="alergenos">-</td>
+                    <td>Croqueta de Esparragos</td>
+                    <td>Esparragos, pure patata, panko, huevo, mostaza, mayonesa, mermelada albaricoque</td>
+                    <td class="precio">4.00 €</td>
+                </tr>
+                <tr>
+                    <td class="alergenos">-</td>
+                    <td>Lasaña vegana</td>
+                    <td>Capas de verduras asadas y bechamel vegetal</td>
+                    <td class="precio">9.90 €</td>
+                </tr>
+                <tr>
+                    <td class="alergenos">S</td>
+                    <td>Tofu salteado</td>
+                    <td>Tofu con verduras y salsa de soja</td>
+                    <td class="precio">9.50 €</td>
+                </tr>
+                <tr>
+                    <td class="alergenos">F</td>
+                    <td>Hamburguesa de lentejas</td>
+                    <td>Pan integral, hamburguesa de lentejas, rúcula y tomate seco</td>
+                    <td class="precio">10.30 €</td>
+                </tr>
+                <tr>
+                    <td class="alergenos">L</td>
+                    <td>Ajiaco de Zetas</td>
+                    <td>maiz, zetas, papa, guascas, cilantro, crema de leche, ajo, alcapárras </td>
+                    <td class="precio">12.00 €</td>
+                <tr>
+                    <td colspan="4" class="categoria">Postres</td>
+                </tr>
+                <tr>
+                    <td class="alergenos">L, H</td>
+                    <td>Flan casero</td>
+                    <td>Tradicional flan de huevo con caramelo</td>
+                    <td class="precio">4.00 €</td>
+                </tr>
+                <tr>
+                    <td class="alergenos">L, F</td>
+                    <td>Tarta de queso y nueces</td>
+                    <td>Cremosa tarta con base crujiente y nueces</td>
+                    <td class="precio">4.80 €</td>
+                </tr>
+                <tr>
+                    <td class="alergenos">L</td>
+                    <td>Mousse de chocolate</td>
+                    <td>Postre suave con intenso sabor a cacao</td>
+                    <td class="precio">4.50 €</td>
+                </tr>
+                <tr>
+                    <td class="alergenos">L</td>
+                    <td>Sorbete de Fresa</td>
+                    <td>Postre suave con intenso sabor a fruta, frutos rojos</td>
+                    <td class="precio">4.00 €</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <script src="script.js"></script>
+        <div id="insertar-footer"></div>
+    </div>
+
+
+    <script src="js/componentes.js"></script>
+    <script>
+        document.getElementById("insertar-overlay").innerHTML = componentes.overlay;
+        document.getElementById("insertar-header").innerHTML = componentes.header;
+        document.getElementById("insertar-footer").innerHTML = componentes.footer;
+
+        // Lógica para activar/desactivar el menú en móviles
+        document.querySelector(".menu-button").addEventListener("click", function () {
+            document.querySelector(".header").classList.toggle("active");
+        });
+    </script>
+</body>
+
+</html>

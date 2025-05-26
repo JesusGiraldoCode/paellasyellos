@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante</title>
+    <link rel="stylesheet" href="css/estilos.css">
+
+</head>
+
+<body>
+    <div id="insertar-overlay"></div>
+    <div id="insertar-header"></div>
+        
+        <br>
+        <div class="fondo-solo">
+
+            <img src="img/Img_restaurante.jpg" alt="imagen decorativa" class="imagen-arriba-derecha">
+
+            <h1>Pa-Ellas y Ellos</h1>
+            <p>El deleite de sabores y colores, el momento lo pones Tú</p>
+            <br>
+            <h2>Bienvenidos a su Restaurante</h2>
+            <br>
+
+            <h2 class="cambia-color">Platos Recomendados</h2>
+            <div class="content-grid">
+                <div class="content-item"><img src="img/img_croquetaEsparragos.jpg" alt="Croquetas de Esparragos">
+                    <h4>Croquetas de Esparragos</h4>
+                    <h5>4,00 &euro;</h5>
+                </div>
+                <div class="content-item"><img src="img/img_ensaladaCesar.jpg" alt="Ensalada Cesar">
+                    <h4>Ensalada Cesar</h4>
+                    <h5>8,00 &euro;</h5>
+                </div>
+                <div class="content-item"><img src="img/img_aguiacoZetas.jpg" alt="Aguiaco de Zetas">
+                    <h4>Aguiaco de Zetas</h4>
+                    <h5>12,00 &euro;</h5>
+                </div>
+                <div class="content-item"><img src="img/img_sorbeteFresa.jpg" alt="Sorbete de Fresa">
+                    <h4>Sorbete de Fresa</h4>
+                    <h5>4,00 &euro;</h5>
+                </div>
+            </div>
+            <div id="insertar-footer"></div>
+        </div>
+
+
+        <script src="js/componentes.js"></script>            
+        <script>
+            document.getElementById("insertar-overlay").innerHTML = componentes.overlay;
+            document.getElementById("insertar-header").innerHTML = componentes.header;
+            document.getElementById("insertar-footer").innerHTML = componentes.footer;
+
+            // Lógica para activar/desactivar el menú en móviles
+            document.querySelector(".menu-button").addEventListener("click", function () {
+                document.querySelector(".header").classList.toggle("active");
+            });
+        </script>
+
+</body>
+
+</html>
