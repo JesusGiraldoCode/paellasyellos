@@ -223,6 +223,71 @@ img:not([alt="logotipo"]) {
     }
 }
 
+/* Estilo del formulario de selección de alérgenos */
+fieldset {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 8px 10px;
+    border-radius: 5px;
+    background-color: transparent;
+  }
+
+/* Estilo de los checkboxes */
+label {
+    margin-right: 15px;
+    font-weight: normal;
+}
+
+/* Tabla con solo líneas horizontales */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    background-color: transparent;
+}
+
+td {
+    border-bottom: 1px solid #ccc;
+    /* Solo borde inferior */
+    border-left: none;
+    border-right: none;
+    padding: 2px;
+    text-align: left;
+}
+
+/* Encabezados de sección de cada categoría */
+.categoria {
+    background-color: #ecf0f1;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.1em;
+    padding: 2px;
+}
+
+/* Columna de precios alineada a la derecha */
+td.precio {
+    text-align: right;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* Fila con alérgenos detectados: se marca en rojo claro */
+.alerta-alergeno {
+    background-color: #7c5454;
+}
+
+/* Aviso que muestra los alérgenos seleccionados */
+#aviso-alergenos {
+    background-color: red;
+    color: yellow;
+    padding: 2px;
+    margin-top: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+}
 
 h1 {
     text-align: center;
